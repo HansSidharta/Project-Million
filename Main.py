@@ -1,4 +1,5 @@
 from time import sleep
+import numpy as np
 import QDB
 
 def askQuestion():
@@ -6,9 +7,13 @@ def askQuestion():
     q = QDB.get_q(level);
 
     print("Question " + str(level+1) + ": " + q[0]);
+    sleep(2)
     print("A." + " " + q[1]);
+    sleep(2)
     print("B." + " " + q[2]);
+    sleep(2)
     print("C." + " " + q[3]);
+    sleep(2)
     print("D." + " " + q[4]);
 
     return
@@ -22,9 +27,9 @@ def checkAnswer():
     else:
         if(answer == q[5]):
             if(level == 4):
-                print("WINNER");
+                print("\nWINNER");
             else:
-                print("CORRECT\n");
+                print("\nCORRECT\n");
                 level = level+1;
                 askQuestion();
                 checkAnswer();
